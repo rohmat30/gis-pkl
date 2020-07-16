@@ -125,3 +125,12 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
+
+
+# compass sass
+public/assets/css/sass
+public/assets/css/.sass-cache
+public/assets/css/config.rb
+public/assets/css/ie.css
+public/assets/css/print.css
+public/assets/css/screen.css
