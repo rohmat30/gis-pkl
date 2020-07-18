@@ -33,6 +33,10 @@ $routes->setAutoRoute(false);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('login', 'Pengguna::login');
+$routes->post('login', 'Pengguna::cobaLogin');
+$routes->get('logout', 'Pengguna::logout');
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing
