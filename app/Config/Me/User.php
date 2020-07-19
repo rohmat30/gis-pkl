@@ -56,4 +56,18 @@ class User extends BaseConfig
             session()->destroy();
         }
     }
+
+    public function getInitials()
+    {
+        helper('text');
+        if ($this->isLoggedIn()) {
+            $words = explode(' ', word_limiter($this->nama, 2));
+            $acronym = "";
+            foreach ($words as $word) {
+                $acronym .= strtoupper($word[0]);
+            }
+            return $acronym;
+        }
+        return NULL;
+    }
 }
