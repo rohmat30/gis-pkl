@@ -14,6 +14,9 @@ $(document).ready(function () {
     ajax: {
       url: dtURL,
       type: "POST",
+      data: function (d) {
+        d.role = $("#role-box").val();
+      },
       beforeSend: function (xhr) {
         let $token = $meta.attr("content");
         xhr.setRequestHeader("X-CSRF-TOKEN", $token);
@@ -41,7 +44,6 @@ $(document).ready(function () {
       {
         data: "username",
         orderable: false,
-        searchable: false,
       },
       {
         data: "role",
@@ -72,9 +74,16 @@ $(document).ready(function () {
 
   $(document).on("keyup", "#search-box", function (e) {
     let val = $(this).val();
-    if (e.keyCode == 13) {
+    if (e.keyCode == 13 && val.length > 0) {
       t.api().search(val).draw();
     }
+    if (val.length < 1) {
+      t.api().search(val).draw();
+    }
+  });
+
+  $(document).on("change", "#role-box", function () {
+    t.api().ajax.reload();
   });
 
   $(".alert-js .close").on("click", function () {

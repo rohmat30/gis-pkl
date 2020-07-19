@@ -20,13 +20,20 @@ class Pengguna extends BaseController
     {
         site()->setTitle('Kelola pengguna')
             ->setBreadcrumb('Kelola pengguna');
-        return view('pengguna\v-pengguna-index');
+
+        $data = [
+            'roles' => $this->userModel
+                ->getRoles()
+        ];
+        return view('pengguna\v-pengguna-index', $data);
     }
 
     public function json()
     {
+        $role = $this->request->getPost('role');
+        $where = empty($role) ? null : ['role' => $role];
         return $this->userModel
-            ->datatables();
+            ->datatables($where);
     }
 
     //--------------------------------------------------------------------

@@ -12,12 +12,19 @@ echo $this->section('content');
 echo $this->include('layout\components\alert');
 echo $this->include('layout\components\js\alert');
 ?>
-<div class="d-flex justify-content-between">
-    <div>
+<div class="d-sm-flex justify-content-sm-between">
+    <div class="mb-sm-0 mb-2">
         <?= anchor('pengguna/tambah', '<i class="fas fa-user-plus"></i> Tambah', ['class' => 'btn btn-success']) ?>
     </div>
     <div>
-        <?= form_input(['class' => 'form-control form-control-sm', 'placeholder' => 'Pencarian...', 'id' => 'search-box']) ?>
+        <div class="form-row">
+            <div class="col">
+                <?= form_dropdown(['class' => 'form-control form-control-sm', 'id' => 'role-box'], array_merge(['' => 'Semua'], $roles)) ?>
+            </div>
+            <div class="col">
+                <?= form_input(['class' => 'form-control form-control-sm', 'placeholder' => 'Pencarian...', 'id' => 'search-box']) ?>
+            </div>
+        </div>
     </div>
 </div>
 <div class="table-responsive mt-2">

@@ -46,9 +46,13 @@ class UserModel extends Model
             'siswa' => 'Siswa',
         ];
     }
-    public function datatables()
+    public function datatables($where = null)
     {
         $dt = new Datatables($this);
+        $dt->select('*');
+        if ($where) {
+            $dt->where($where);
+        }
         $dt->addColumn('action', [
             'edit' => site_url('/pengguna/$1/edit'),
             'hapus' => site_url('/pengguna/$1/hapus')
