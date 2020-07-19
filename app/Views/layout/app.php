@@ -11,10 +11,12 @@
 
     <?= $this->include('layout\includes\app-breadcrumb') ?>
     <div class="container-md">
-        <div class="page-title">
-            <h1 class="h4 font-weight-normal"><?= site()->getTitle() ?? 'Dashboard' ?></h1>
+        <div class="main-content">
+            <div class="page-title">
+                <h1 class="h4 font-weight-normal"><?= site()->getTitle() ?? 'Dashboard' ?></h1>
+            </div>
+            <?= $this->renderSection('content') ?>
         </div>
-        <?= $this->renderSection('content') ?>
     </div>
 
     <?= $this->include('layout\includes\app-footer') ?>
