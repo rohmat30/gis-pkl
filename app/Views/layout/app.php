@@ -9,14 +9,10 @@
     <?= $this->include('layout\includes\app-header') ?>
     <?= $this->include('layout\includes\app-navbar') ?>
 
+    <?= $this->include('layout\includes\app-breadcrumb') ?>
     <div class="container-md">
-        <div class="d-md-flex justify-content-md-between">
-            <div class="page-title mt-3">
-                <h1 class="h4 font-weight-normal"><?= site()->getTitle() ?? 'Dashboard' ?></h1>
-            </div>
-            <div class="d-none d-md-block">
-                <?= $this->include('layout\includes\app-breadcrumb') ?>
-            </div>
+        <div class="page-title">
+            <h1 class="h4 font-weight-normal"><?= site()->getTitle() ?? 'Dashboard' ?></h1>
         </div>
         <?= $this->renderSection('content') ?>
     </div>
