@@ -37,6 +37,19 @@ $routes->get('login', 'Pengguna::login');
 $routes->post('login', 'Pengguna::cobaLogin');
 $routes->get('logout', 'Pengguna::logout');
 
+// pengguna
+$routes->group('pengguna', function ($routes) {
+	$routes->get('/', 'Pengguna::index', ['filter' => 'role:staff_tu']);
+	$routes->post('json', 'Pengguna::json', ['filter' => 'role:staff_tu']);
+
+	$routes->get('tambah', 'Pengguna::tambah', ['filter' => 'role:staff_tu']);
+	$routes->post('tambah', 'Pengguna::simpan', ['filter' => 'role:staff_tu']);
+
+	$routes->get('(:num)/edit', 'Pengguna::edit/$1', ['filter' => 'role:staff_tu']);
+	$routes->post('(:num)/edit', 'Pengguna::perbarui/$1', ['filter' => 'role:staff_tu']);
+
+	$routes->delete('(:num)/hapus', 'Pengguna::hapus/$1', ['filter' => 'role:staff_tu']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Libraries\Datatables;
 use CodeIgniter\Model;
 
 class UserModel extends Model
@@ -21,7 +22,7 @@ class UserModel extends Model
 
     protected $validationRules = [
         'username' => 'required|alpha_numeric|min_length[3]|is_unique[users.username,user_id,{user_id}]',
-        'password' => 'min_length[5]',
+        'password' => 'permit_empty|min_length[5]',
         'nama'     => 'required|alpha_space',
         'role'     => 'required|in_list[siswa,kajur,pembimbing,pembimbing_lapangan,staff_tu]',
     ];
@@ -33,5 +34,25 @@ class UserModel extends Model
         $data['data']['password'] = password_hash($data['data']['password'], PASSWORD_BCRYPT, ['cost' => 8]);
 
         return $data;
+    }
+
+    public function getRoles()
+    {
+        return [
+            'staff_tu' => 'Staff TU',
+            'kajur' => 'Kajur',
+            'pembimbing' => 'Pembimbing',
+            'pembimbing_lapangan' => 'Pembimbing lapangan',
+            'siswa' => 'Siswa',
+        ];
+    }
+    public function datatables()
+    {
+        $dt = new Datatables($this);
+        $dt->addColumn('action', [
+            'edit' => site_url('/pengguna/$1/edit'),
+            'hapus' => site_url('/pengguna/$1/hapus')
+        ], 'user_id');
+        return $dt->generate();
     }
 }
