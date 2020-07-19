@@ -2,6 +2,7 @@
 <?= $this->section('content') ?>
 <div class="mt-5 mx-auto" style="max-width: 20rem;">
     <div class="text-center py-3">
+        <img src="/assets/img/logo-reverse.png" alt="logo aplikasi" class="mb-2">
         <h1 class="h3 font-weight-light">Login ke sistem</h1>
     </div>
     <?= $this->include('layout\components\alert') ?>
