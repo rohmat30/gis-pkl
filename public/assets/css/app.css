@@ -11,21 +11,22 @@ button {
 }
 
 .btn {
-  padding: 0.375rem 0.5rem;
+  padding: 0.35rem 1rem;
   font-size: 14px;
+  font-weight: 500;
   border-radius: 0.375rem;
 }
 .btn.btn-lg {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
   font-size: 1.25rem;
 }
 .btn.btn-sm {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
 }
 .btn.btn-icon {
   font-size: 12px;
-  padding: 0;
+  padding: 0 0 0 4px;
   text-align: center;
 }
 .btn.btn-icon.btn-xs {
@@ -33,18 +34,127 @@ button {
   height: 24px;
   line-height: 20px;
 }
+.btn.btn-success {
+  border-color: #208637;
+}
+.btn.btn-outline {
+  transition: all ease 0.5s;
+}
+.btn.btn-outline-primary:hover, .btn.btn-outline-primary:focus {
+  background: #007bff;
+  border-color: #007bff;
+}
+.btn.btn-outline-success:hover, .btn.btn-outline-success:focus {
+  background: #28a745;
+  border-color: #28a745;
+}
+.btn.btn-outline-info:hover, .btn.btn-outline-info:focus {
+  background: #17a2b8;
+  border-color: #17a2b8;
+}
+.btn.btn-outline-warning:hover, .btn.btn-outline-warning:focus {
+  background: #ffc107;
+  border-color: #ffc107;
+}
+.btn.btn-outline-danger:hover, .btn.btn-outline-danger:focus {
+  background: #dc3545;
+  border-color: #dc3545;
+}
+.btn.btn-outline-primary, .btn.btn-outline-success, .btn.btn-outline-info, .btn.btn-outline-warning, .btn.btn-outline-danger {
+  transition: all ease 0.5s;
+  border-color: #dee2e6;
+}
+.btn.btn-outline-primary > .fa,
+.btn.btn-outline-primary > .fas,
+.btn.btn-outline-primary > .far, .btn.btn-outline-success > .fa,
+.btn.btn-outline-success > .fas,
+.btn.btn-outline-success > .far, .btn.btn-outline-info > .fa,
+.btn.btn-outline-info > .fas,
+.btn.btn-outline-info > .far, .btn.btn-outline-warning > .fa,
+.btn.btn-outline-warning > .fas,
+.btn.btn-outline-warning > .far, .btn.btn-outline-danger > .fa,
+.btn.btn-outline-danger > .fas,
+.btn.btn-outline-danger > .far {
+  color: #000;
+}
+.btn.btn-outline-primary.disabled, .btn.btn-outline-success.disabled, .btn.btn-outline-info.disabled, .btn.btn-outline-warning.disabled, .btn.btn-outline-danger.disabled {
+  pointer-events: none;
+  background: transparent;
+  border-color: #e9ecef;
+}
+.btn.btn-outline-primary.disabled:hover, .btn.btn-outline-primary.disabled:focus, .btn.btn-outline-success.disabled:hover, .btn.btn-outline-success.disabled:focus, .btn.btn-outline-info.disabled:hover, .btn.btn-outline-info.disabled:focus, .btn.btn-outline-warning.disabled:hover, .btn.btn-outline-warning.disabled:focus, .btn.btn-outline-danger.disabled:hover, .btn.btn-outline-danger.disabled:focus {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+.btn.btn-outline-primary.disabled:hover > .fa,
+.btn.btn-outline-primary.disabled:hover > .fas,
+.btn.btn-outline-primary.disabled:hover > .far, .btn.btn-outline-primary.disabled:focus > .fa,
+.btn.btn-outline-primary.disabled:focus > .fas,
+.btn.btn-outline-primary.disabled:focus > .far, .btn.btn-outline-success.disabled:hover > .fa,
+.btn.btn-outline-success.disabled:hover > .fas,
+.btn.btn-outline-success.disabled:hover > .far, .btn.btn-outline-success.disabled:focus > .fa,
+.btn.btn-outline-success.disabled:focus > .fas,
+.btn.btn-outline-success.disabled:focus > .far, .btn.btn-outline-info.disabled:hover > .fa,
+.btn.btn-outline-info.disabled:hover > .fas,
+.btn.btn-outline-info.disabled:hover > .far, .btn.btn-outline-info.disabled:focus > .fa,
+.btn.btn-outline-info.disabled:focus > .fas,
+.btn.btn-outline-info.disabled:focus > .far, .btn.btn-outline-warning.disabled:hover > .fa,
+.btn.btn-outline-warning.disabled:hover > .fas,
+.btn.btn-outline-warning.disabled:hover > .far, .btn.btn-outline-warning.disabled:focus > .fa,
+.btn.btn-outline-warning.disabled:focus > .fas,
+.btn.btn-outline-warning.disabled:focus > .far, .btn.btn-outline-danger.disabled:hover > .fa,
+.btn.btn-outline-danger.disabled:hover > .fas,
+.btn.btn-outline-danger.disabled:hover > .far, .btn.btn-outline-danger.disabled:focus > .fa,
+.btn.btn-outline-danger.disabled:focus > .fas,
+.btn.btn-outline-danger.disabled:focus > .far {
+  color: #000;
+}
+.btn.btn-outline-primary:hover > .fa,
+.btn.btn-outline-primary:hover > .fas,
+.btn.btn-outline-primary:hover > .far, .btn.btn-outline-primary:focus > .fa,
+.btn.btn-outline-primary:focus > .fas,
+.btn.btn-outline-primary:focus > .far, .btn.btn-outline-success:hover > .fa,
+.btn.btn-outline-success:hover > .fas,
+.btn.btn-outline-success:hover > .far, .btn.btn-outline-success:focus > .fa,
+.btn.btn-outline-success:focus > .fas,
+.btn.btn-outline-success:focus > .far, .btn.btn-outline-info:hover > .fa,
+.btn.btn-outline-info:hover > .fas,
+.btn.btn-outline-info:hover > .far, .btn.btn-outline-info:focus > .fa,
+.btn.btn-outline-info:focus > .fas,
+.btn.btn-outline-info:focus > .far, .btn.btn-outline-warning:hover > .fa,
+.btn.btn-outline-warning:hover > .fas,
+.btn.btn-outline-warning:hover > .far, .btn.btn-outline-warning:focus > .fa,
+.btn.btn-outline-warning:focus > .fas,
+.btn.btn-outline-warning:focus > .far, .btn.btn-outline-danger:hover > .fa,
+.btn.btn-outline-danger:hover > .fas,
+.btn.btn-outline-danger:hover > .far, .btn.btn-outline-danger:focus > .fa,
+.btn.btn-outline-danger:focus > .fas,
+.btn.btn-outline-danger:focus > .far {
+  color: #fff;
+}
+.btn > .fa,
+.btn > .fas,
+.btn > .far {
+  color: rgba(255, 255, 255, 0.75);
+  margin-right: 0.2rem;
+}
 
 #back-to-top {
-  background: #17a2b8;
+  background: rgba(0, 0, 0, 0.5);
   color: #fff;
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
   padding: 0.25rem 0.65rem;
   border-radius: 0.25rem;
-  font-size: 1.25rem;
+  font-size: 14px;
   box-shadow: 0 1px 3px 0 rgba(73, 80, 87, 0.25);
   display: none;
+  text-decoration: none;
+}
+#back-to-top:hover {
+  background: #000;
 }
 
 .navbar-custom {
@@ -182,10 +292,17 @@ button {
   color: #fff;
 }
 
+.page-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #eff1f3;
+}
+
 .breadcrumb {
-  background: #fff;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  background: transparent;
+  padding-left: 0rem;
+  padding-right: 0rem;
   border-radius: 0;
   font-size: 12px;
 }
@@ -195,7 +312,6 @@ button {
 
 .form-control {
   border-radius: 0.375rem;
-  padding: 0.3rem 0.5rem;
   height: auto;
 }
 .form-control::placeholder, .form-control::-webkit-input-placeholder {
@@ -207,12 +323,49 @@ button {
   font-size: 14px;
 }
 
+table.table {
+  border-radius: 0.35rem;
+}
+table.table thead tr th,
+table.table tbody tr th {
+  border-width: 0px;
+}
 table.table tbody tr td,
+table.table tbody tr th,
+table.table thead tr td,
 table.table thead tr th {
-  padding: 0.5rem;
+  padding: 0.375rem;
 }
 table.table tbody tr td::after, table.table tbody tr td::before,
+table.table tbody tr th::after,
+table.table tbody tr th::before,
+table.table thead tr td::after,
+table.table thead tr td::before,
 table.table thead tr th::after,
 table.table thead tr th::before {
   display: none !important;
+}
+table.table tbody tr td .btn-icon,
+table.table tbody tr th .btn-icon,
+table.table thead tr td .btn-icon,
+table.table thead tr th .btn-icon {
+  margin-top: -4px;
+}
+
+.dataTables_wrapper .dataTables_info {
+  clear: both;
+  float: left;
+  padding-top: 0.755rem;
+}
+.dataTables_wrapper .dataTables_paginate {
+  float: right;
+  text-align: right;
+  padding-top: 0.25rem;
+}
+.dataTables_wrapper .dataTable.table-hover tbody tr:hover {
+  background: #f3fafb;
+}
+
+.tooltip {
+  font-size: 12px;
 }
