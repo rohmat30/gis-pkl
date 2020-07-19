@@ -50,6 +50,15 @@ $routes->group('pengguna', function ($routes) {
 
 	$routes->delete('(:num)/hapus', 'Pengguna::hapus/$1', ['filter' => 'role:staff_tu']);
 });
+
+// pengajuan
+$routes->group('pengajuan', function ($routes) {
+	$routes->get('/', 'Pengajuan::index', ['filter' => 'role:siswa']);
+	$routes->post('json', 'Pengajuan::json', ['filter' => 'role:siswa']);
+
+	$routes->get('tambah', 'Pengajuan::tambah', ['filter' => 'role:siswa']);
+	$routes->post('tambah', 'Pengajuan::simpan', ['filter' => 'role:siswa']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
