@@ -35,7 +35,7 @@ class Pengajuan extends BaseController
             ->setBreadcrumb(['pengajuan' => 'Pengajuan Instansi', 'Buat pengajuan']);
 
         $data = [
-            'nama'   => old('nama'),
+            'nama_instansi'   => old('nama'),
             'alamat' => old('alamat'),
             'pic'    => old('pic'),
             'validation' => $this->validation
@@ -63,7 +63,7 @@ class Pengajuan extends BaseController
             $fileName = sha1(uniqid(user()->id . user()->username)) . '.' . $file->getExtension();
             $data = [
                 'foto'    => $fileName,
-                'nama'    => esc($request->getPost('nama')),
+                'nama_instansi'    => esc($request->getPost('nama')),
                 'pic'     => esc($request->getPost('pic')),
                 'alamat'  => esc($request->getPost('alamat')),
                 'user_id' => esc(user()->id)

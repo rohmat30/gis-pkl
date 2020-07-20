@@ -43,7 +43,7 @@ $(document).ready(function () {
         },
       },
       {
-        data: "nama",
+        data: "nama_instansi",
         orderable: false,
       },
       {

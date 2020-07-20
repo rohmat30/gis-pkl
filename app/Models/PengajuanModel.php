@@ -13,7 +13,7 @@ class PengajuanModel extends Model
     protected $returnType     = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nama', 'alamat', 'pic', 'foto', 'user_id'];
+    protected $allowedFields = ['nama_instansi', 'alamat', 'pic', 'foto', 'user_id'];
 
     protected $useTimestamps = true;
 
@@ -21,8 +21,13 @@ class PengajuanModel extends Model
     {
         $url = base_url('uploads');
         $dt = new Datatables($this);
-        $dt->select('nama,alamat,pic,concat("' . $url . '/",foto) as foto');
-        $dt->where('user_id', user()->id);
+        $dt->select('pengajuan_id,pengajuan_instansi.nama_instansi,alamat,pic,concat("' . $url . '/",foto) as foto,users.nama,username');
+        $dt->join('users', 'users.user_id = ' . $this->table . '.user_id');
+        if (user()->role == 'siswa') {
+            $dt->where('users.user_id', user()->id);
+        } else {
+            $dt->addColumn('action', site_url('persetujuan/$1/tambah'), 'pengajuan_id');
+        }
         return $dt->generate();
     }
 }

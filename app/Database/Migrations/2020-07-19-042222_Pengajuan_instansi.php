@@ -19,7 +19,7 @@ class PengajuanInstansi extends Migration
 					'unsigned'       => TRUE,
 					'auto_increment' => TRUE
 				],
-				'nama' => [
+				'nama_instansi' => [
 					'type'       => 'VARCHAR',
 					'constraint' => 100
 				],
