@@ -25,8 +25,7 @@ class PengajuanInstansi extends Migration
 				],
 				'alamat' => [
 					'type'       => 'VARCHAR',
-					'constraint' => 255,
-					'unique'     => TRUE
+					'constraint' => 255
 				],
 				'pic' => [
 					'type'       => 'VARCHAR',
