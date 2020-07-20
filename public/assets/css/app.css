@@ -378,3 +378,20 @@ table.table thead tr th .btn-icon {
 .tooltip {
   font-size: 12px;
 }
+
+.nav.nav-tabs .nav-item .nav-link {
+  color: #212529;
+  border-top-width: 2px;
+}
+.nav.nav-tabs .nav-item .nav-link:hover {
+  border-color: transparent;
+}
+.nav.nav-tabs .nav-item .nav-link.active {
+  font-weight: 500;
+  border-top-color: #fd7e14;
+}
+.nav.nav-tabs .nav-item .nav-link.active:hover {
+  border-color: #dee2e6;
+  border-top-color: #fd7e14;
+  border-bottom-color: transparent;
+}
