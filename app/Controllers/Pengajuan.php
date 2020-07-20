@@ -66,7 +66,6 @@ class Pengajuan extends BaseController
                 'nama'    => esc($request->getPost('nama')),
                 'pic'     => esc($request->getPost('pic')),
                 'alamat'  => esc($request->getPost('alamat')),
-                'status'  => 'menunggu',
                 'user_id' => esc(user()->id)
             ];
 

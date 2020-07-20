@@ -25,7 +25,6 @@ echo $this->include('layout\components\js\alert');
             <th>Nama instansi</th>
             <th>Alamat</th>
             <th>PIC</th>
-            <th width="50">Status</th>
         </thead>
         <tbody></tbody>
     </table>

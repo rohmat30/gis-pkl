@@ -36,10 +36,6 @@ class PengajuanInstansi extends Migration
 					'type'       => 'VARCHAR',
 					'constraint' => 255
 				],
-				'status'      => [
-					'type'       => 'ENUM',
-					'constraint' => ['setuju', 'tidak', 'menunggu']
-				],
 				'user_id' => [
 					'type'       => 'INT',
 					'constraint' => 11,

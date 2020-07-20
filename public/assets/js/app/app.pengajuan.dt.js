@@ -56,26 +56,6 @@ $(document).ready(function () {
         orderable: false,
         searchable: false,
       },
-      {
-        data: "status",
-        orderable: false,
-        searchable: false,
-        render: function (data) {
-          let color;
-          switch (data) {
-            case "menunggu":
-              color = "warning";
-              break;
-            case "setuju":
-              color = "success";
-              break;
-            default:
-              color = "danger";
-              break;
-          }
-          return `<span class="badge badge-${color} badge-pill">${data}</span>`;
-        },
-      },
     ],
     order: [[0, "desc"]],
   });

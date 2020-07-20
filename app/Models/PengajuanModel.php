@@ -13,7 +13,7 @@ class PengajuanModel extends Model
     protected $returnType     = 'object';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['nama', 'alamat', 'pic', 'foto', 'status', 'user_id'];
+    protected $allowedFields = ['nama', 'alamat', 'pic', 'foto', 'user_id'];
 
     protected $useTimestamps = true;
 
@@ -21,7 +21,7 @@ class PengajuanModel extends Model
     {
         $url = base_url('uploads');
         $dt = new Datatables($this);
-        $dt->select('nama,alamat,pic,concat("' . $url . '/",foto) as foto,status');
+        $dt->select('nama,alamat,pic,concat("' . $url . '/",foto) as foto');
         $dt->where('user_id', user()->id);
         return $dt->generate();
     }
