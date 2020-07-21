@@ -7,7 +7,6 @@ use Config\Services;
 
 class Lokasi extends BaseController
 {
-    protected $pengajuanModel;
     protected $instansiModel;
     protected $validation;
     public function __construct()
