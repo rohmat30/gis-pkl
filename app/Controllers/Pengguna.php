@@ -95,7 +95,7 @@ class Pengguna extends BaseController
         if (empty($user)) {
             return redirect()->to('/pengguna')
                 ->with('alert', [
-                    'type' => 'info',
+                    'type' => 'warning',
                     'mess' => 'Record dengan id <b>' . $id . '</b> tidak ditemukan!'
                 ]);
         }
@@ -125,7 +125,7 @@ class Pengguna extends BaseController
         if (empty($user)) {
             return redirect()->to('/pengguna')
                 ->with('alert', [
-                    'type' => 'info',
+                    'type' => 'warning',
                     'mess' => 'Record dengan id <b>' . $id . '</b> tidak ditemukan!'
                 ]);
         }
