@@ -85,7 +85,6 @@ echo $this->endSection();
 
 // bottom assets
 echo $this->section('bottom_assets');
-echo script_tag('assets/js/app/app.pengajuan.form.js');
 echo script_tag('assets/js/app/app.marker.icon.js');
 echo script_tag('assets/js/app/app.instansi.map.js');
 echo $this->endSection()
