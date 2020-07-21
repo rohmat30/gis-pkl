@@ -68,6 +68,20 @@ $routes->group('persetujuan', function ($routes) {
 	$routes->get('(:num)/tambah', 'Persetujuan::tambah/$1', ['filter' => 'role:kajur']);
 	$routes->post('(:num)/tambah', 'Persetujuan::simpan/$1', ['filter' => 'role:kajur']);
 });
+
+// lokasi
+$routes->group('lokasi', function ($routes) {
+	$routes->get('/', 'Lokasi::index', ['filter' => 'role:staff_tu']);
+	$routes->post('json', 'Lokasi::json', ['filter' => 'role:staff_tu']);
+
+	$routes->get('tambah', 'Lokasi::tambah', ['filter' => 'role:staff_tu']);
+	$routes->post('tambah', 'Lokasi::simpan', ['filter' => 'role:staff_tu']);
+
+	$routes->get('(:num)/edit', 'Lokasi::edit/$1', ['filter' => 'role:staff_tu']);
+	$routes->post('(:num)/edit', 'Lokasi::perbarui/$1', ['filter' => 'role:staff_tu']);
+
+	$routes->delete('(:num)/hapus', 'Lokasi::hapus/$1', ['filter' => 'role:staff_tu']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
