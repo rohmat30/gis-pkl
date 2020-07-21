@@ -22,6 +22,12 @@ class InstansiModel extends Model
         $dt = new Datatables($this);
         $url = base_url('uploads');
         $dt->select('instansi_id, nama_instansi,alamat,pic,status,keterangan,latitude,longitude,concat("' . $url . '/",foto) as foto');
+        if (user()->role == "staff_tu") {
+            $dt->addColumn('aksi', [
+                'edit'  => site_url('lokasi/$1/edit'),
+                'hapus' => site_url('lokasi/$1/hapus')
+            ], 'instansi_id');
+        }
         return $dt->generate();
     }
 }
