@@ -48,7 +48,7 @@ class Persetujuan extends BaseController
 
         site()->setTitle('Buat peresetujuan')
             ->setBreadcrumb([
-                'persetujuan' => 'Persetujaun Instansi',
+                'persetujuan' => 'Persetujuan Instansi',
                 'Buat persetujuan'
             ]);
 
