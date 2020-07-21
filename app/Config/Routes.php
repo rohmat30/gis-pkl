@@ -54,10 +54,19 @@ $routes->group('pengguna', function ($routes) {
 // pengajuan
 $routes->group('pengajuan', function ($routes) {
 	$routes->get('/', 'Pengajuan::index', ['filter' => 'role:siswa']);
-	$routes->post('json', 'Pengajuan::json', ['filter' => 'role:siswa']);
+	$routes->post('json', 'Pengajuan::json', ['filter' => 'role:siswa,kajur']);
 
 	$routes->get('tambah', 'Pengajuan::tambah', ['filter' => 'role:siswa']);
 	$routes->post('tambah', 'Pengajuan::simpan', ['filter' => 'role:siswa']);
+});
+
+// persetujuan
+$routes->group('persetujuan', function ($routes) {
+	$routes->get('/', 'Persetujuan::index', ['filter' => 'role:kajur']);
+	$routes->post('json', 'Persetujuan::json', ['filter' => 'role:kajur']);
+
+	$routes->get('(:num)/tambah', 'Persetujuan::tambah/$1', ['filter' => 'role:kajur']);
+	$routes->post('(:num)/tambah', 'Persetujuan::simpan/$1', ['filter' => 'role:kajur']);
 });
 /**
  * --------------------------------------------------------------------
