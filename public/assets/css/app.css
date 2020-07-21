@@ -395,3 +395,31 @@ table.table thead tr th .btn-icon {
   border-top-color: #fd7e14;
   border-bottom-color: transparent;
 }
+
+.leaflet-control-inp-search,
+.leaflet-control-btn-search {
+  border: 0;
+  box-shadow: 0 0 3px 0 red;
+  margin: -1px;
+}
+.leaflet-control-inp-search:focus,
+.leaflet-control-btn-search:focus {
+  outline: none;
+}
+
+.btn.btn-poppup-map {
+  background: #fff;
+  padding: 0.125rem 0.25rem;
+  font-size: 12px;
+  border: 1px solid #dee2e6;
+  margin-top: 0.25rem;
+  font-weight: normal;
+}
+.btn.btn-poppup-map:hover, .btn.btn-poppup-map:focus {
+  color: #fff;
+  background: #28a745;
+}
+.btn.btn-poppup-map:focus {
+  outline: none;
+  box-shadow: none;
+}
