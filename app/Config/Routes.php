@@ -82,6 +82,24 @@ $routes->group('lokasi', function ($routes) {
 
 	$routes->delete('(:num)/hapus', 'Lokasi::hapus/$1', ['filter' => 'role:staff_tu']);
 });
+
+// jadwal
+$routes->group('jadwal', function ($routes) {
+	$routes->get('/', 'Jadwal::index', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,siswa']);
+	$routes->post('json', 'Jadwal::json', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,siswa']);
+
+	$routes->get('tambah', 'Jadwal::tambah', ['filter' => 'role:staff_tu']);
+	$routes->post('tambah', 'Jadwal::simpan', ['filter' => 'role:staff_tu']);
+
+	$routes->addPlaceholder('role', '(siswa|pembimbing|pembimbing-lapangan)');
+	$routes->get('select2/user/(:role)', 'Jadwal::select2User/$1', ['filter' => 'role:staff_tu']);
+	$routes->get('select2/instansi', 'Jadwal::select2Instansi', ['filter' => 'role:staff_tu']);
+
+	$routes->get('(:num)/edit', 'Jadwal::edit/$1', ['filter' => 'role:staff_tu']);
+	$routes->post('(:num)/edit', 'Jadwal::perbarui/$1', ['filter' => 'role:staff_tu']);
+
+	$routes->delete('(:num)/hapus', 'Jadwal::hapus/$1', ['filter' => 'role:staff_tu']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
