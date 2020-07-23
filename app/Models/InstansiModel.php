@@ -30,4 +30,20 @@ class InstansiModel extends Model
         }
         return $dt->generate();
     }
+
+    public function select2($query)
+    {
+        $url = base_url('uploads');
+        $this->select('instansi_id,nama_instansi,concat("' . $url . '/",foto) as foto');
+
+        $this->groupStart()
+            ->orLike('nama_instansi', $query)
+            ->groupEnd();
+
+        //order by nama 'blah%'
+        $this->orderBy('IF(nama_instansi LIKE "' . $query . '%",1,2) ASC', '', TRUE);
+        $this->orderBy('instansi_id', 'ASC');
+
+        return $this->findAll(5);
+    }
 }

@@ -59,4 +59,23 @@ class UserModel extends Model
         ], 'user_id');
         return $dt->generate();
     }
+
+    public function select2($query, $role = null)
+    {
+        $this->select('user_id,username,nama');
+        // filter by role
+        if (isset($role)) {
+            $this->where('role', $role);
+        }
+
+        $this->groupStart()
+            ->like('username', $query)
+            ->orLike('nama', $query)
+            ->groupEnd();
+
+        //order by nama 'blah%'
+        $this->orderBy('IF(nama LIKE "' . $query . '%",1,2) ASC', '', TRUE);
+        $this->orderBy('user_id', 'ASC');
+        return $this->findAll(5);
+    }
 }
