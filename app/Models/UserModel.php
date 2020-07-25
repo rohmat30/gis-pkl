@@ -66,6 +66,13 @@ class UserModel extends Model
         // filter by role
         if (isset($role)) {
             $this->where('role', $role);
+            if ($role == 'siswa') {
+                $this->join('jadwal', 'users.user_id = jadwal.siswa_id', 'LEFT')
+                    ->groupStart()
+                    ->where('jadwal.jadwal_id')
+                    ->orWhere('jadwal.deleted_at IS NOT NULL')
+                    ->groupEnd();
+            }
         }
 
         $this->groupStart()
