@@ -130,6 +130,12 @@ $routes->group('evaluasi', function ($routes) {
 	$routes->get('(:num)/edit', 'Evaluasi::edit/$1', ['filter' => 'role:kajur']);
 	$routes->post('(:num)/edit', 'Evaluasi::perbarui/$1', ['filter' => 'role:kajur']);
 });
+
+// map lokasi
+$routes->group('map', function ($routes) {
+	$routes->get('/', 'Map::index', ['filter' => 'role:pembimbing,kajur,siswa']);
+	$routes->get('geojson', 'Map::geojson', ['filter' => 'role:pembimbing,kajur,siswa']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
