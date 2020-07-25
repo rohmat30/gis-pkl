@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="dropdown-divider"></div>
-                <?= anchor(['user', 'ganti-password'], 'Ganti Password', ['class' => 'dropdown-item']) ?>
+                <?= anchor(['pengguna', 'ganti-password'], 'Ganti Password', ['class' => 'dropdown-item']) ?>
                 <?= anchor(['logout'], 'Keluar', ['class' => 'dropdown-item']) ?>
             </div>
         </div>
