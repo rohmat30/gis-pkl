@@ -35,7 +35,7 @@ class Menu extends BaseConfig
                 'title' => 'Nilai',
                 'icon'  => 'fas fa-object-group'
             ],
-            'lokasi' => [
+            'map' => [
                 'title' => 'Lokasi prakerin',
                 'icon'  => 'fas fa-map'
             ]
@@ -53,7 +53,7 @@ class Menu extends BaseConfig
                 'title' => 'Kelola evaluasi',
                 'icon'  => 'fas fa-vector-square'
             ],
-            'lokasi' => [
+            'map' => [
                 'title' => 'Lokasi prakerin',
                 'icon'  => 'fas fa-map'
             ],
@@ -75,7 +75,7 @@ class Menu extends BaseConfig
                 'title' => 'Kelola nilai',
                 'icon'  => 'fas fa-object-group'
             ],
-            'lokasi' => [
+            'map' => [
                 'title' => 'Lokasi prakerin',
                 'icon'  => 'fas fa-map'
             ],
