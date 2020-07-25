@@ -41,6 +41,8 @@ $routes->get('logout', 'Pengguna::logout');
 $routes->group('pengguna', function ($routes) {
 	$routes->get('/', 'Pengguna::index', ['filter' => 'role:staff_tu']);
 	$routes->post('json', 'Pengguna::json', ['filter' => 'role:staff_tu']);
+	$routes->get('ganti-password', 'Pengguna::gantiPassword');
+	$routes->post('ganti-password', 'Pengguna::perbaruiPassword');
 
 	$routes->get('tambah', 'Pengguna::tambah', ['filter' => 'role:staff_tu']);
 	$routes->post('tambah', 'Pengguna::simpan', ['filter' => 'role:staff_tu']);
