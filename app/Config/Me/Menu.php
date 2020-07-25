@@ -93,7 +93,7 @@ class Menu extends BaseConfig
                 'title' => 'Jadwal &amp; tempat',
                 'icon'  => 'far fa-calendar-alt'
             ],
-            'penilaian' => [
+            'nilai' => [
                 'title' => 'Kelola nilai',
                 'icon'  => 'fas fa-object-group'
             ],
