@@ -100,6 +100,22 @@ $routes->group('jadwal', function ($routes) {
 
 	$routes->delete('(:num)/hapus', 'Jadwal::hapus/$1', ['filter' => 'role:staff_tu']);
 });
+
+// nilai
+$routes->group('nilai', function ($routes) {
+	$routes->get('/', 'Nilai::index', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur,siswa']);
+	$routes->post('json', 'Nilai::json', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur,siswa']);
+
+	$routes->get('(:num)/detail', 'Nilai::detail/$1', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur,siswa']);
+
+	$routes->get('select2', 'Nilai::select2Siswa', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
+
+	$routes->get('tambah', 'Nilai::tambah', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
+	$routes->post('tambah', 'Nilai::simpan', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
+
+	$routes->get('(:num)/edit', 'Nilai::edit/$1', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
+	$routes->post('(:num)/edit', 'Nilai::perbarui/$1', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
