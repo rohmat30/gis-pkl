@@ -79,4 +79,12 @@ $(document).ready(function () {
     });
     myJson.addTo(map);
   });
+
+  map.on("click", function () {
+    if (mySelect) {
+      let ico = mySelect.feature.properties.students;
+      mySelect.getElement().style.transition = ".35s ease all";
+      mySelect.setIcon(ico > 0 ? blueIconSm : grayIconSm);
+    }
+  });
 });
