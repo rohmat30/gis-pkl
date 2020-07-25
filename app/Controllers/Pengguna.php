@@ -240,4 +240,38 @@ class Pengguna extends BaseController
         user()->unset();
         return redirect()->to('/login');
     }
+
+    //--------------------------------------------------------------------
+    public function gantiPassword()
+    {
+        site()->setTitle('Ganti password')
+            ->setBreadcrumb('Ganti password');
+        $data = [
+            'password_lama' => old('password_lama'),
+            'validation' => $this->validation
+        ];
+        return view('pengguna\v-pengguna-ganti-password', $data);
+    }
+
+    public function perbaruiPassword()
+    {
+        $user = $this->userModel->find(user()->id);
+
+        $request = $this->request;
+        $valid = $this->validate([
+            'password_lama' => 'required|password_check',
+            'password_baru' => 'required|min_length[5]|differs[password_lama]',
+            'password_ulang' => 'required|matches[password_baru]',
+        ]);
+        if ($valid) {
+            $this->userModel->update($user->user_id, ['password' => $request->getPost('password_baru')]);
+            return redirect()->back()
+                ->with('alert', [
+                    'type' => 'success',
+                    'mess' => 'Berhasil mengubah password!'
+                ]);
+        }
+        return redirect()->back()
+            ->withInput();
+    }
 }
