@@ -116,6 +116,20 @@ $routes->group('nilai', function ($routes) {
 	$routes->get('(:num)/edit', 'Nilai::edit/$1', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
 	$routes->post('(:num)/edit', 'Nilai::perbarui/$1', ['filter' => 'role:staff_tu,pembimbing_lapangan,pembimbing,kajur']);
 });
+
+// evaluasi
+$routes->group('evaluasi', function ($routes) {
+	$routes->get('/', 'Evaluasi::index', ['filter' => 'role:staff_tu,pembimbing,kajur']);
+	$routes->post('json', 'Evaluasi::json', ['filter' => 'role:staff_tu,pembimbing,kajur']);
+
+	$routes->get('select2', 'Evaluasi::select2Siswa', ['filter' => 'role:kajur']);
+
+	$routes->get('tambah', 'Evaluasi::tambah', ['filter' => 'role:kajur']);
+	$routes->post('tambah', 'Evaluasi::simpan', ['filter' => 'role:kajur']);
+
+	$routes->get('(:num)/edit', 'Evaluasi::edit/$1', ['filter' => 'role:kajur']);
+	$routes->post('(:num)/edit', 'Evaluasi::perbarui/$1', ['filter' => 'role:kajur']);
+});
 /**
  * --------------------------------------------------------------------
  * Additional Routing
