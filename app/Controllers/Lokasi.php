@@ -66,7 +66,7 @@ class Lokasi extends BaseController
             'status'    => 'required|string',
             'latitude'  => 'required|decimal|less_than_equal_to[90]|greater_than_equal_to[-90]',
             'longitude' => 'required|decimal|less_than_equal_to[180]|greater_than_equal_to[-180]',
-            'foto'      => 'uploaded[foto]|is_image[foto]|ext_in[foto,jpg,png]|max_size[foto,2048]',
+            'foto'      => 'uploaded[foto]|is_image[foto]|ext_in[foto,jpg,jpeg,png]|max_size[foto,2048]',
         ];
 
         $data = [
@@ -169,7 +169,7 @@ class Lokasi extends BaseController
             'status'    => 'required|string',
             'latitude'  => 'required|decimal|less_than_equal_to[90]|greater_than_equal_to[-90]',
             'longitude' => 'required|decimal|less_than_equal_to[180]|greater_than_equal_to[-180]',
-            'foto'      => 'is_image[foto]|ext_in[foto,jpg,png]|max_size[foto,2048]',
+            'foto'      => 'is_image[foto]|ext_in[foto,jpg,jpeg,png]|max_size[foto,2048]',
         ];
 
         $data = [
