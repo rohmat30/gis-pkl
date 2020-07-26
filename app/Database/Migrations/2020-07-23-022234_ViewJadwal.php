@@ -10,7 +10,7 @@ class ViewJadwal extends Migration
 	public function up()
 	{
 		//
-		$sql = 'SELECT jadwal_id,siswa_id,pembimbing_id,pl_id,instansi_id,s.nama nama_siswa,p.nama nama_pembimbing,pl.nama nama_pl,nama_instansi,tanggal_awal,tanggal_akhir,jadwal.deleted_at
+		$sql = 'SELECT jadwal_id,siswa_id,pembimbing_id,pl_id,instansi.instansi_id,s.nama nama_siswa,p.nama nama_pembimbing,pl.nama nama_pl,nama_instansi,tanggal_awal,tanggal_akhir,jadwal.deleted_at
 			FROM jadwal
 			JOIN users s
 				ON jadwal.`siswa_id` = s.user_id
