@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var map = L.map("map").setView([-6.7047263118838836, 107.39410400390625], 11);
+  var map = L.map("map").setView([-6.7047263118838836, 107.39410400390625], 9);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 <div>
                   <table class="table table-borderless p-0 m-0">
                       <tr>
-                          <th class="p-0">Nama Instansi</th>
+                          <th class="p-0">Instansi</th>
                           <td class="py-0 px-1">:</td>
                           <td class="p-0">${feature.properties.name}</td>
                       </tr>
@@ -53,7 +53,7 @@ $(document).ready(function () {
                         <td class="p-0">${feature.geometry.coordinates[0]}</td>
                       </tr>
                       <tr>
-                          <th class="p-0">Jumlah siswa</th>
+                          <th class="p-0">Siswa</th>
                           <td class="py-0 px-1">:</td>
                           <td class="p-0">${feature.properties.students} orang</td>
                       </tr>
